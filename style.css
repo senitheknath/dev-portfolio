@@ -1,0 +1,117 @@
+/* Reset & Base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  scroll-padding-top: 64px;
+}
+
+/* Overlay for mobile menu */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(2px);
+  z-index: 40;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+/* Header blur */
+header {
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.7);
+  transition: background 0.3s ease;
+}
+
+/* Mobile Menu */
+#mobile-menu {
+  transition: transform 0.3s ease;
+  z-index: 50;
+}
+
+#mobile-menu.active {
+  transform: translateX(0);
+}
+
+/* Menu links hover */
+.nav-link, .mobile-nav-link, .social-link {
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-link:hover, .mobile-nav-link:hover {
+  color: #111827;
+  transform: scale(1.05);
+}
+
+/* Hamburger Button */
+#menu-button {
+  cursor: pointer;
+}
+
+#menu-button:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip Link - visible on focus */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Smooth scroll offset for fixed header */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Focus visible styles for keyboard navigation */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Profile image aspect ratio */
+img[alt="Portrait of Senith Eknath"] {
+  aspect-ratio: 1;
+}
+
+
+#photography, #projects .fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+#photography, #projects .fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
