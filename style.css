@@ -1,102 +1,736 @@
-/* Reset & Base */
+/* Apple UI & Fluid Motion Design System - Clean Studio Palette */
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Palette from user reference */
+  --bg-primary: #ffffff;
+  --bg-secondary: #fbfbfd;
+  --bg-surface: #f5f5f7;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.82);
+  
+  --border-glass: rgba(0, 0, 0, 0.07);
+  --border-glass-hover: rgba(0, 0, 0, 0.16);
+  --border-highlight: rgba(255, 255, 255, 0.8);
+
+  --text-primary: #1d1d1f;
+  --text-secondary: #515154;
+  --text-muted: #86868b;
+
+  /* Signature Pastel & Jet Black Accent Palette */
+  --palette-coral: #f87171;
+  --palette-coral-bg: rgba(248, 113, 113, 0.12);
+  --palette-mint: #5eead4;
+  --palette-mint-bg: rgba(94, 234, 212, 0.15);
+  --palette-blue: #60a5fa;
+  --palette-blue-bg: rgba(96, 165, 250, 0.12);
+  --palette-black: #111111;
+
+  --accent-apple: #0071e3;
+  --accent-blue-glow: rgba(96, 165, 250, 0.2);
+  --accent-coral-glow: rgba(248, 113, 113, 0.18);
+  --accent-gradient: linear-gradient(180deg, #111111 0%, #3f3f46 100%);
+
+  /* High-Performance Physics Springs */
+  --apple-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --apple-spring: cubic-bezier(0.25, 1, 0.5, 1);
+  --apple-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --apple-duration: 0.4s;
+}
+
+/* Reset & Hardware-Accelerated Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Selective non-selectable interactive UI */
+.select-none, button, .nav-link-pill, .social-icon-btn, .photo-card, .apple-btn-primary, .apple-btn-secondary {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 html {
   scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  color-scheme: light;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  scroll-padding-top: 64px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Inter", sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  letter-spacing: -0.015em;
+  transform: translateZ(0);
 }
 
-/* Overlay for mobile menu */
-.overlay {
-  position: fixed;
-  top: 0;
+/* Section Rendering Optimization */
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+/* Custom Apple Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.16);
+  border-radius: 100px;
+  border: 2px solid var(--bg-primary);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.28);
+}
+
+/* Typography Enhancements */
+.text-gradient {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Color Palette Indicators at bottom-left */
+.palette-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 9999px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transform: translateZ(0);
+}
+
+.palette-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: transform 0.3s var(--apple-ease);
+  will-change: transform;
+}
+.palette-dot:hover {
+  transform: scale(1.35);
+}
+
+.dot-coral { background-color: var(--palette-coral); }
+.dot-mint { background-color: var(--palette-mint); }
+.dot-blue { background-color: var(--palette-blue); }
+.dot-black { background-color: var(--palette-black); }
+
+/* Ambient Pastel Glow Backgrounds - GPU Accelerated */
+.ambient-glow {
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  animation: float-slow 18s ease-in-out infinite alternate;
+}
+
+.glow-blue {
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.18) 0%, rgba(96, 165, 250, 0) 70%);
+}
+
+.glow-coral {
+  background: radial-gradient(circle, rgba(248, 113, 113, 0.15) 0%, rgba(248, 113, 113, 0) 70%);
+}
+
+.glow-mint {
+  background: radial-gradient(circle, rgba(94, 234, 212, 0.18) 0%, rgba(94, 234, 212, 0) 70%);
+}
+
+@keyframes float-slow {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(0, -30px, 0) scale(1.05); }
+  100% { transform: translate3d(0, 25px, 0) scale(0.96); }
+}
+
+@media (max-width: 768px) {
+  .ambient-glow {
+    width: 280px;
+    height: 280px;
+    filter: blur(70px);
+    opacity: 0.4;
+  }
+}
+
+/* Glassmorphism Components - Composited */
+.glass-nav-container {
+  position: sticky;
+  top: 16px;
+  z-index: 120;
+  padding: 0 16px;
+  transform: translateZ(0);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 9999px;
+  box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  transition: background 0.3s var(--apple-ease), border-color 0.3s var(--apple-ease), box-shadow 0.3s var(--apple-ease);
+  transform: translateZ(0);
+}
+
+.glass-nav.scrolled {
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 14px 36px -6px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+}
+
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--border-glass);
+  border-radius: 28px;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+  transition: transform var(--apple-duration) var(--apple-ease), 
+              border-color var(--apple-duration) var(--apple-ease), 
+              box-shadow var(--apple-duration) var(--apple-ease),
+              background var(--apple-duration) var(--apple-ease);
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.glass-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-glass-hover);
+  transform: translateY(-4px) translateZ(0);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 1) inset;
+}
+
+
+/* Signature Scribble / Highlight Style from image */
+.hand-highlight-blue {
+  position: relative;
+  display: inline-block;
+  padding: 2px 14px;
+  border-radius: 9999px;
+  border: 2px solid #70c5ff;
+}
+
+.hand-highlight-coral {
+  position: relative;
+  display: inline-block;
+}
+.hand-highlight-coral::after {
+  content: '';
+  position: absolute;
   left: 0;
+  bottom: -4px;
   width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.2);
-  backdrop-filter: blur(2px);
-  z-index: 40;
+  height: 4px;
+  background-image: radial-gradient(circle, #f87171 40%, transparent 45%);
+  background-size: 8px 4px;
+  background-repeat: repeat-x;
+}
+
+/* Apple Pill Badges & Buttons */
+.apple-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: #f5f5f7;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--text-primary);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: all 0.3s var(--apple-ease);
+}
+
+.apple-badge:hover {
+  border-color: rgba(0, 0, 0, 0.18);
+  background: #ebebee;
+}
+
+.apple-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--palette-black);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: 9999px;
+  font-size: 0.9375rem;
+  transition: all 0.3s var(--apple-ease);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
+.apple-btn-primary:hover {
+  background: #27272a;
+  transform: scale(1.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.apple-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.apple-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #f5f5f7;
+  color: var(--text-primary);
+  font-weight: 500;
+  padding: 12px 26px;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.9375rem;
+  transition: all 0.3s var(--apple-ease);
+  text-decoration: none;
+}
+
+.apple-btn-secondary:hover {
+  background: #ebebee;
+  border-color: rgba(0, 0, 0, 0.18);
+  transform: scale(1.04);
+}
+
+.apple-btn-secondary:active {
+  transform: scale(0.98);
+}
+
+/* Nav Links with Apple Pill Hover */
+.nav-link-pill {
+  position: relative;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.25s var(--apple-ease);
+  text-decoration: none;
+}
+
+.nav-link-pill:hover {
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.nav-link-pill.active {
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.07);
+  font-weight: 600;
+}
+
+.social-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f5f5f7;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--text-secondary);
+  transition: all 0.3s var(--apple-ease);
+  text-decoration: none;
+}
+
+.social-icon-btn:hover {
+  color: var(--text-primary);
+  background: #ebebee;
+  border-color: rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px) scale(1.08);
+}
+
+/* Mobile Navigation Floating Popup Menu */
+#mobile-menu {
+  position: fixed;
+  top: 76px;
+  left: 16px;
+  right: 16px;
+  max-width: 440px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(36px) saturate(200%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 20px 48px -10px rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  padding: 14px;
+  z-index: 110;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transform: translateY(-12px) scale(0.97);
+  transition: opacity 0.25s var(--apple-ease), transform 0.3s var(--apple-spring), visibility 0.25s;
+  overflow: hidden;
+}
+
+#mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+@media (min-width: 768px) {
+  #mobile-menu {
+    display: none !important;
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s var(--apple-ease), visibility 0.3s;
+  touch-action: none;
 }
 
 .overlay.active {
   opacity: 1;
-  pointer-events: auto;
   visibility: visible;
+  pointer-events: auto;
 }
 
-/* Header blur */
-header {
-  backdrop-filter: blur(10px);
-  background: rgba(255,255,255,0.7);
-  transition: background 0.3s ease;
+/* Tech Icon Tiles */
+.tech-tile {
+  background: #fbfbfd;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 22px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s var(--apple-ease);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Mobile Menu */
-#mobile-menu {
-  transition: transform 0.3s ease;
-  z-index: 50;
+.tech-tile:hover {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.16);
+  transform: translateY(-6px) translateZ(0) scale(1.04);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
 }
 
-#mobile-menu.active {
-  transform: translateX(0);
+/* Avatar Ring & Lighting */
+.avatar-wrapper {
+  position: relative;
+  display: inline-block;
 }
 
-/* Menu links hover */
-.nav-link, .mobile-nav-link, .social-link {
-  transition: color 0.3s, transform 0.3s;
+.avatar-ring {
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  background: var(--palette-blue);
+  opacity: 0.35;
+  filter: blur(12px);
+  z-index: 0;
+  transition: opacity 0.3s var(--apple-ease), transform 0.3s var(--apple-ease);
+  will-change: opacity, transform;
 }
 
-.nav-link:hover, .mobile-nav-link:hover {
-  color: #111827;
+.avatar-wrapper:hover .avatar-ring {
+  opacity: 0.55;
+  transform: scale(1.06);
+}
+
+
+/* Scroll Reveal Animations - GPU Accelerated */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition: opacity 0.7s var(--apple-spring), transform 0.7s var(--apple-spring);
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* Photo Gallery & Lightbox - Composited */
+.photo-card {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #f5f5f7;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.4s var(--apple-ease), border-color 0.4s var(--apple-ease), box-shadow 0.4s var(--apple-ease);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--apple-spring);
+  will-change: transform;
+}
+
+.photo-card:hover {
+  border-color: rgba(0, 0, 0, 0.18);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px) translateZ(0);
+}
+
+.photo-card:hover img {
   transform: scale(1.05);
 }
 
-/* Hamburger Button */
-#menu-button {
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(17, 17, 17, 0.88) 100%);
+  opacity: 0;
+  transition: opacity 0.3s var(--apple-ease);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.photo-card:hover .photo-overlay {
+  opacity: 1;
+}
+
+
+/* Lightbox Modal */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(17, 17, 17, 0.92);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s var(--apple-ease), visibility 0.35s;
+  padding: 24px;
+}
+
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 92vw;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(0.94);
+  transition: transform 0.4s var(--apple-ease);
+}
+
+.lightbox.active .lightbox-content {
+  transform: scale(1);
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: 18px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  margin-top: 16px;
+  color: #d1d5db;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -46px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  transition: all 0.2s var(--apple-ease);
 }
 
-#menu-button:focus-visible {
-  outline: 2px solid #0066cc;
-  outline-offset: 2px;
-  border-radius: 4px;
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
 }
 
-/* Skip Link - visible on focus */
+.lightbox-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s var(--apple-ease);
+  z-index: 10;
+}
+
+.lightbox-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+
+/* Skip Link Accessible */
 .skip-link {
   position: absolute;
-  top: -40px;
-  left: 0;
-  background: #000;
-  color: #fff;
-  padding: 8px 16px;
+  top: -60px;
+  left: 20px;
+  background: var(--palette-black);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 9999px;
   text-decoration: none;
-  z-index: 100;
+  z-index: 999;
   font-weight: 600;
+  font-size: 0.875rem;
+  transition: top 0.3s var(--apple-ease);
 }
 
 .skip-link:focus {
-  top: 0;
+  top: 20px;
 }
 
-/* Smooth scroll offset for fixed header */
-section {
-  scroll-margin-top: 80px;
-}
-
-/* Focus visible styles for keyboard navigation */
+/* Focus States */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #0066cc;
-  outline-offset: 2px;
-  border-radius: 4px;
+  outline: 2px solid var(--palette-blue);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* Navigation link transitions */
+.nav-link, .social-link {
+  transition: color 0.25s var(--apple-ease), transform 0.25s var(--apple-ease);
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s var(--apple-ease), background 0.2s var(--apple-ease);
+}
+
+.mobile-nav-link:hover {
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.mobile-nav-link.active {
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.07);
+  font-weight: 600;
+}
+
+/* Hamburger Toggle Button */
+#menu-button {
+  cursor: pointer;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s var(--apple-ease), transform 0.2s var(--apple-ease);
+}
+
+#menu-button:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+#menu-button:active {
+  transform: scale(0.92);
+}
+
+#menu-button i {
+  transition: transform 0.25s var(--apple-ease);
+}
+
+/* Section scroll margin for smooth anchors */
+section {
+  scroll-margin-top: 100px;
 }
 
 /* Profile image aspect ratio */
@@ -104,14 +738,60 @@ img[alt="Portrait of Senith Eknath"] {
   aspect-ratio: 1;
 }
 
-
-#photography, #projects .fade-in {
+/* Scroll reveal for photography cards and project items */
+#photography .fade-in,
+#projects .fade-in {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--apple-spring), transform 0.7s var(--apple-spring);
+  will-change: opacity, transform;
 }
 
-#photography, #projects .fade-in.show {
+#photography .fade-in.show,
+#projects .fade-in.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+/* Responsive Lightbox for Mobile */
+@media (max-width: 640px) {
+  .lightbox {
+    padding: 12px;
+  }
+
+  .lightbox-close {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    background: rgba(30, 30, 30, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 220;
+  }
+
+  .lightbox-btn {
+    width: 40px;
+    height: 40px;
+    background: rgba(30, 30, 30, 0.6);
+  }
+
+  .lightbox-prev {
+    left: 8px;
+  }
+
+  .lightbox-next {
+    right: 8px;
+  }
+
+  .lightbox-img {
+    max-height: 70dvh;
+    border-radius: 12px;
+  }
+
+  .lightbox-caption {
+    font-size: 0.875rem;
+    padding: 0 8px;
+  }
 }
