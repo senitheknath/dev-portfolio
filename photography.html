@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photography - Senith Eknath</title>
   
-  <meta name="description" content="Photography portfolio of Senith Eknath">
+  <meta name="description" content="Explore Senith Eknath's photography portfolio - capturing astrophotography, nightscapes, architecture, perspectives, and natural landscapes.">
   <meta name="author" content="Senith Eknath">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="https://senithek.com/photography.html">
   <link rel="icon" href="media/favicon-small-32x32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="media/favicon-small-180x180.png">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,146 +20,266 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Senith Eknath">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Photography - Senith Eknath">
-  <meta property="og:description" content="Explore Senith Eknath's photography portfolio.">
+  <meta property="og:description" content="Explore Senith Eknath's photography collection spanning astrophotography, urban architecture, and landscapes.">
   <meta property="og:url" content="https://senithek.com/photography.html">
-  <meta property="og:image" content="media/favicon-small-270x270.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Photography - Senith Eknath">
-  <meta name="twitter:description" content="Official photography portfolio of Senith Eknath.">
-  <meta name="twitter:image" content="media/favicon-small-270x270.png">
+  <meta property="og:image" content="https://senithek.com/media/profilepic.jpg">
+  <meta property="og:image:alt" content="Senith Eknath Photography Collection">
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@senithek">
+  <meta name="twitter:creator" content="@senithek">
+  <meta name="twitter:title" content="Photography - Senith Eknath">
+  <meta name="twitter:description" content="Explore Senith Eknath's photography collection spanning astrophotography, urban architecture, and landscapes.">
+  <meta name="twitter:image" content="https://senithek.com/media/profilepic.jpg">
+
+  <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Senith Eknath",
-      "url": "https://senithek.com/",
-      "image": "https://senithek.com/media/profilepic.jpg",
-      "sameAs": ["https://github.com/senitheknath", "https://www.instagram.com/senithek", "https://x.com/senithek", "https://youtube.com/@redjellyfr"],
-      "jobTitle": "Software Developer",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "url": "https://senithek.com/#Contact"
-      }
+      "@graph": [
+        {
+          "@type": "ImageGallery",
+          "@id": "https://senithek.com/photography.html#gallery",
+          "url": "https://senithek.com/photography.html",
+          "name": "Photography Collection - Senith Eknath",
+          "description": "Visual portfolio of night sky astrophotography, architecture, and perspectives by Senith Eknath.",
+          "author": {
+            "@type": "Person",
+            "name": "Senith Eknath",
+            "url": "https://senithek.com/"
+          }
+        }
+      ]
     }
   </script>
 </head>
-<body id="bphoto"class="min-h-screen bg-gray-50 flex flex-col select-none">
+<body id="bphoto" class="min-h-screen bg-white text-[#1d1d1f] flex flex-col relative overflow-x-hidden selection:bg-blue-100 selection:text-blue-900">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div id="overlay" class="overlay" aria-hidden="true"></div>
 
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/70 shadow-sm">
-      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Primary navigation">
-        <div class="flex justify-between h-16 items-center">
-          <div class="flex items-center">
-            <a href="index.html" class="text-lg font-bold text-gray-900 select-none">Senith Eknath</a>
+    <!-- Ambient Subtle Glow Highlights -->
+    <div class="ambient-glow glow-blue -top-32 -left-32" aria-hidden="true"></div>
+    <div class="ambient-glow glow-coral top-1/2 -right-48" aria-hidden="true"></div>
+
+    <!-- Glass Floating Navigation -->
+    <div class="glass-nav-container">
+      <header class="glass-nav max-w-5xl mx-auto px-5 py-3">
+        <nav class="flex justify-between items-center" aria-label="Primary navigation">
+          <div class="flex items-center space-x-3">
+            <a href="index.html#Home" class="flex items-center space-x-2 text-[#1d1d1f] font-semibold tracking-tight hover:opacity-75 transition-opacity">
+              <span class="text-sm font-semibold tracking-wide">Senith Eknath</span>
+            </a>
           </div>
 
-          <div class="md:hidden">
-            <button id="menu-button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false" class="text-gray-600 hover:text-gray-900 focus:outline-none text-xl">
-              <i class="fas fa-bars" aria-hidden="true"></i>
+          <div class="md:hidden flex items-center">
+            <button id="menu-button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-gray-900 hover:bg-black/5 rounded-full transition-colors focus:outline-none">
+              <i class="fas fa-bars text-lg" aria-hidden="true"></i>
             </button>
           </div>
 
-          <div class="hidden md:flex items-center space-x-8">
-            <a href="index.html" class="nav-link text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium select-none">Home</a>
-            <a href="index.html#About" class="nav-link text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium select-none">About</a>
-            <a href="index.html#Contact" class="nav-link text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium select-none">Contact</a>
-            <a href="project.html" class="nav-link text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium select-none">Projects</a>
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-1">
+            <a href="index.html#Home" class="nav-link-pill">Home</a>
+            <a href="index.html#About" class="nav-link-pill">About</a>
+            <a href="index.html#Contact" class="nav-link-pill">Contact</a>
+            <a href="project.html" class="nav-link-pill">Projects</a>
+            <a href="photography.html" class="nav-link-pill active">Photography</a>
           </div>
 
-          <div class="hidden md:flex items-center space-x-4">
-            <a href="https://github.com/senitheknath" target="_blank" rel="noopener noreferrer me" class="social-link text-gray-400 hover:text-gray-900" aria-label="GitHub profile">
-              <i class="fab fa-github" aria-hidden="true"></i>
+          <!-- Desktop Social Icons -->
+          <div class="hidden md:flex items-center space-x-2">
+            <a href="https://github.com/senitheknath" target="_blank" rel="noopener noreferrer me" class="social-icon-btn" aria-label="GitHub profile">
+              <i class="fab fa-github text-sm" aria-hidden="true"></i>
             </a>
-            <a href="https://www.instagram.com/senithek" target="_blank" rel="noopener noreferrer me" class="social-link text-gray-400 hover:text-gray-900" aria-label="Instagram profile">
-              <i class="fab fa-instagram" aria-hidden="true"></i>
+            <a href="https://www.linkedin.com/in/senitheknath" target="_blank" rel="noopener noreferrer me" class="social-icon-btn" aria-label="LinkedIn profile">
+              <i class="fab fa-linkedin text-sm" aria-hidden="true"></i>
             </a>
-            <a href="https://x.com/senithek" target="_blank" rel="noopener noreferrer me" class="social-link text-gray-400 hover:text-gray-900" aria-label="X profile">
-              <i class="fab fa-twitter" aria-hidden="true"></i>
-            </a>
-            <a href="https://youtube.com/@redjellyfr" target="_blank" rel="noopener noreferrer me" class="social-link text-gray-400 hover:text-gray-900" aria-label="YouTube channel">
-              <i class="fab fa-youtube" aria-hidden="true"></i>
+            <a href="https://x.com/senithek" target="_blank" rel="noopener noreferrer me" class="social-icon-btn" aria-label="X (formerly Twitter) profile">
+              <i class="fab fa-twitter text-sm" aria-hidden="true"></i>
             </a>
           </div>
-        </div>
-      </nav>
-    </header>
+        </nav>
+      </header>
+    </div>
 
-    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full" aria-hidden="true">
-      <div class="p-6 h-full flex flex-col">
-        <div class="flex justify-end mb-8">
-          <button id="close-menu" class="text-gray-500 hover:text-gray-900" aria-label="Close menu">
-            <i class="fas fa-times text-xl" aria-hidden="true"></i>
-          </button>
-        </div>
+    <!-- Mobile Navigation Popup Card -->
+    <div id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Mobile navigation">
+      <div class="flex flex-col space-y-1">
+        <a href="index.html#Home" class="mobile-nav-link">
+          <span>Home</span>
+          <i class="fas fa-chevron-right text-xs opacity-40" aria-hidden="true"></i>
+        </a>
+        <a href="index.html#About" class="mobile-nav-link">
+          <span>About</span>
+          <i class="fas fa-chevron-right text-xs opacity-40" aria-hidden="true"></i>
+        </a>
+        <a href="index.html#Contact" class="mobile-nav-link">
+          <span>Contact</span>
+          <i class="fas fa-chevron-right text-xs opacity-40" aria-hidden="true"></i>
+        </a>
+        <a href="project.html" class="mobile-nav-link">
+          <span>Projects</span>
+          <i class="fas fa-chevron-right text-xs opacity-40" aria-hidden="true"></i>
+        </a>
+        <a href="photography.html" class="mobile-nav-link active">
+          <span>Photography</span>
+          <i class="fas fa-chevron-right text-xs opacity-40" aria-hidden="true"></i>
+        </a>
+      </div>
 
-
-        <div class="flex flex-col space-y-6">
-          <a href="index.html" class="mobile-nav-link text-lg font-medium text-gray-500 hover:text-gray-900 py-2 select-none">Home</a>
-          <a href="index.html#About" class="mobile-nav-link text-lg font-medium text-gray-500 hover:text-gray-900 py-2 select-none">About</a>
-          <a href="index.html#Contact" class="mobile-nav-link text-lg font-medium text-gray-500 hover:text-gray-900 py-2 select-none">Contact</a>
-          <a href="project.html" class="mobile-nav-link text-lg font-medium text-gray-500 hover:text-gray-900 py-2 select-none">Projects</a>
-        </div>
-
-
-        <div class="mt-auto mb-8 flex justify-center space-x-6">
-          <a href="https://github.com/senitheknath" target="_blank" rel="noopener noreferrer me" class="social-link text-gray-400 hover:text-gray-900" aria-label="GitHub profile">
-            <i class="fab fa-github text-xl" aria-hidden="true"></i>
-          </a>
-          <a href="https://www.instagram.com/senithek" target="_blank" rel="noopener noreferrer me" class="social-link text-gray-400 hover:text-gray-900" aria-label="Instagram profile">
-            <i class="fab fa-instagram text-xl" aria-hidden="true"></i>
-          </a>
-          <a href="https://x.com/senithek" target="_blank" rel="noopener noreferrer me" class="social-link text-gray-400 hover:text-gray-900" aria-label="X profile">
-            <i class="fab fa-twitter text-xl" aria-hidden="true"></i>
-          </a>
-          <a href="https://youtube.com/@redjellyfr" target="_blank" rel="noopener noreferrer me" class="social-link text-gray-400 hover:text-gray-900" aria-label="YouTube channel">
-            <i class="fab fa-youtube text-xl" aria-hidden="true"></i>
-          </a>
-        </div>
+      <div class="pt-3 mt-3 border-t border-gray-100 flex justify-center space-x-3">
+        <a href="https://github.com/senitheknath" target="_blank" rel="noopener noreferrer me" class="social-icon-btn" aria-label="GitHub profile">
+          <i class="fab fa-github text-sm" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/senitheknath" target="_blank" rel="noopener noreferrer me" class="social-icon-btn" aria-label="LinkedIn profile">
+          <i class="fab fa-linkedin text-sm" aria-hidden="true"></i>
+        </a>
+        <a href="https://x.com/senithek" target="_blank" rel="noopener noreferrer me" class="social-icon-btn" aria-label="X profile">
+          <i class="fab fa-twitter text-sm" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/senithek" target="_blank" rel="noopener noreferrer me" class="social-icon-btn" aria-label="Instagram profile">
+          <i class="fab fa-instagram text-sm" aria-hidden="true"></i>
+        </a>
+        <a href="https://youtube.com/@redjellyfr" target="_blank" rel="noopener noreferrer me" class="social-icon-btn" aria-label="YouTube channel">
+          <i class="fab fa-youtube text-sm" aria-hidden="true"></i>
+        </a>
       </div>
     </div>
-    <main id="main-content" class="flex flex-col w-full">
 
+    <main id="main-content" class="flex flex-col w-full flex-grow">
+      <section id="photography" class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 w-full">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4">Photography</h1>
+          <p class="text-gray-600 text-lg">Visual stories through astrophotography, architecture, and perspectives.</p>
+        </div>
 
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <!-- 1. Blood Moon -->
+          <div class="photo-card fade-in group">
+            <img src="photograph/blood-moon.webp" alt="Blood Moon lunar eclipse with reddish glow" loading="lazy" class="w-full h-72 sm:h-80 object-cover">
+            <div class="photo-overlay">
+              <div>
+                <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-red-300 mb-1">Astrophotography</span>
+                <span class="photo-title block text-white font-medium text-base drop-shadow-md">Blood Moon Eclipse</span>
+              </div>
+            </div>
+          </div>
 
-      <section id="photography" class="max-w-6xl mx-auto px-4 py-12">
-  <h2 class="text-3xl font-bold text-center mb-8">My Photography</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    <div class="overflow-hidden rounded-lg group fade-in">
-      <img src="photograph/blood%20moon.jpg" alt="Photo 1" class="w-full h-100 object-cover transform transition-transform duration-500 group-hover:scale-110">
-    </div>
-    <div class="overflow-hidden rounded-lg group fade-in">
-      <img src="photograph/building.jpg" alt="Photo 2" class="w-full h-100 object-cover transform transition-transform duration-500 group-hover:scale-110">
-    </div>
-    <div class="overflow-hidden rounded-lg group fade-in">
-      <img src="photograph/milkeyway.jpg" alt="Photo 3" class="w-full h-100 object-cover transform transition-transform duration-500 group-hover:scale-110">
-    </div>
-    <div class="overflow-hidden rounded-lg group fade-in">
-      <img src="photograph/lotus%20tower2.jpg" alt="Photo 3" class="w-full h-100 object-cover transform transition-transform duration-500 group-hover:scale-110">
-    </div>
-    <div class="overflow-hidden rounded-lg group fade-in">
-      <img src="photograph/golden%20hour.jpg" alt="Photo 3" class="w-full h-100 object-cover transform transition-transform duration-500 group-hover:scale-110">
-    </div>
-    <div class="overflow-hidden rounded-lg group fade-in">
-      <img src="photograph/lotus%20tower1.jpg" alt="Photo 3" class="w-full h-100 object-cover transform transition-transform duration-500 group-hover:scale-110">
-    </div>
-    <div class="overflow-hidden rounded-lg group fade-in">
-      <img src="photograph/middle%20of%20nowhere.jpg" alt="Photo 3" class="w-full h-100 object-cover transform transition-transform duration-500 group-hover:scale-110">
-    </div>
-    <div class="overflow-hidden rounded-lg group fade-in">
-      <img src="photograph/tower.jpg" alt="Photo 3" class="w-full h-100 object-cover transform transition-transform duration-500 group-hover:scale-110">
-    </div>
-    <div class="overflow-hidden rounded-lg group fade-in">
-      <img src="photograph/pc%2026.2.0.jpg" alt="Photo 3" class="w-full h-100 object-cover transform transition-transform duration-500 group-hover:scale-110">
-    </div>
-  </div>
-</section>
+          <!-- 2. Building -->
+          <div class="photo-card fade-in group">
+            <img src="photograph/building.webp" alt="Modern city building geometric facade" loading="lazy" class="w-full h-72 sm:h-80 object-cover">
+            <div class="photo-overlay">
+              <div>
+                <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-blue-300 mb-1">Architecture</span>
+                <span class="photo-title block text-white font-medium text-base drop-shadow-md">Urban Architecture</span>
+              </div>
+            </div>
+          </div>
 
+          <!-- 3. Milky Way -->
+          <div class="photo-card fade-in group">
+            <img src="photograph/milkyway.webp" alt="Milky Way galactic core in starry night sky" loading="lazy" class="w-full h-72 sm:h-80 object-cover">
+            <div class="photo-overlay">
+              <div>
+                <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-indigo-300 mb-1">Astrophotography</span>
+                <span class="photo-title block text-white font-medium text-base drop-shadow-md">Milky Way Night Sky</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Lotus Tower Night -->
+          <div class="photo-card fade-in group">
+            <img src="photograph/lotus-tower2.webp" alt="Colombo Lotus Tower vibrant illumination at night" loading="lazy" class="w-full h-72 sm:h-80 object-cover">
+            <div class="photo-overlay">
+              <div>
+                <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-pink-300 mb-1">Cityscape</span>
+                <span class="photo-title block text-white font-medium text-base drop-shadow-md">Lotus Tower at Night</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Golden Hour -->
+          <div class="photo-card fade-in group">
+            <img src="photograph/golden-hour.webp" alt="Golden hour sunset warm light on horizon" loading="lazy" class="w-full h-72 sm:h-80 object-cover">
+            <div class="photo-overlay">
+              <div>
+                <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-amber-300 mb-1">Landscape</span>
+                <span class="photo-title block text-white font-medium text-base drop-shadow-md">Golden Hour Horizon</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Lotus Tower Daytime -->
+          <div class="photo-card fade-in group">
+            <img src="photograph/lotus-tower1.webp" alt="Lotus Tower Colombo architectural view under daytime sky" loading="lazy" class="w-full h-72 sm:h-80 object-cover">
+            <div class="photo-overlay">
+              <div>
+                <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-teal-300 mb-1">Architecture</span>
+                <span class="photo-title block text-white font-medium text-base drop-shadow-md">Lotus Tower Daylight</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Middle of Nowhere -->
+          <div class="photo-card fade-in group">
+            <img src="photograph/middle-of-nowhere.webp" alt="Countryside open landscape with solitary trees" loading="lazy" class="w-full h-72 sm:h-80 object-cover">
+            <div class="photo-overlay">
+              <div>
+                <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-emerald-300 mb-1">Landscape</span>
+                <span class="photo-title block text-white font-medium text-base drop-shadow-md">Middle of Nowhere</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. Tower -->
+          <div class="photo-card fade-in group">
+            <img src="photograph/tower.webp" alt="Steel tower lattice reaching toward clear sky" loading="lazy" class="w-full h-72 sm:h-80 object-cover">
+            <div class="photo-overlay">
+              <div>
+                <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-cyan-300 mb-1">Perspective</span>
+                <span class="photo-title block text-white font-medium text-base drop-shadow-md">Skyward Tower</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9. Workstation Setup -->
+          <div class="photo-card fade-in group">
+            <img src="photograph/pc-setup.webp" alt="Minimalist desktop PC workspace setup" loading="lazy" class="w-full h-72 sm:h-80 object-cover">
+            <div class="photo-overlay">
+              <div>
+                <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-purple-300 mb-1">Workstation</span>
+                <span class="photo-title block text-white font-medium text-base drop-shadow-md">Workstation Setup</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-   <footer class="py-6 text-center text-gray-500 text-xs font-mono bg-gray-50">
+
+    <!-- Accessible Lightbox Modal -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo Lightbox" aria-hidden="true">
+      <button id="lightbox-close" class="lightbox-close" aria-label="Close lightbox">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <button id="lightbox-prev" class="lightbox-btn lightbox-prev" aria-label="Previous photo">
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <div class="lightbox-content">
+        <img id="lightbox-img" class="lightbox-img" src="" alt="Expanded photography shot">
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+      </div>
+      <button id="lightbox-next" class="lightbox-btn lightbox-next" aria-label="Next photo">
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <footer class="py-8 text-center text-gray-500 text-xs font-mono bg-gray-50 border-t border-gray-100">
       <small>&copy; 2026 Senith Eknath. All rights reserved.</small>
     </footer>
 
@@ -168,6 +290,5 @@
     </noscript>
 
     <script src="script.js" defer></script>
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"3c5d5004b28d4f4f9a5bb2916b160217","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
